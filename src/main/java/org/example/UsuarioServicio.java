@@ -21,4 +21,9 @@ public class UsuarioServicio {
          return  usuarioRepositorio.obtenerUsuario(id);
     }
 
+    public  UsuarioDto actualizarUsuario(final String nombre){
+
+        return usuarioRepositorio.actualizarUsuario(nombre);
+    }
+
 }

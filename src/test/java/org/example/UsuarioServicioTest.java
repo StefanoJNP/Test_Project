@@ -53,4 +53,15 @@ class UsuarioServicioTest {
         Mockito.verify(usuarioRepositorio).obtenerUsuario(1L);
     }
 
+    @Test
+    void actualizarUsuario() {
+        UsuarioDto objetoSimulado = new UsuarioDto(1L, "Prueba");
+        UsuarioDto esperado = new UsuarioDto(1L, "Miguel");
+        Mockito.when(usuarioRepositorio.actualizarUsuario(Mockito.anyString()))
+                .thenReturn(objetoSimulado);
+        final UsuarioDto resultado = usuarioServicio.actualizarUsuario("Prueba");
+        //Assertions.assertEquals(esperado, resultado);
+        Assertions.assertNotEquals(esperado.nombre, resultado.nombre,
+                "Los nombres son iguales");
+    }
 }
