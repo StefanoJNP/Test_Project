@@ -26,4 +26,9 @@ public class UsuarioServicio {
         return usuarioRepositorio.actualizarUsuario(nombre);
     }
 
+    public boolean eliminarUsuario(final long id){
+
+        return usuarioRepositorio.eliminarUsuario(id);
+    }
+
 }

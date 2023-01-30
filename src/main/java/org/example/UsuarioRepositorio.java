@@ -6,4 +6,7 @@ public interface UsuarioRepositorio {
     UsuarioDto obtenerUsuario(Long id);
 
     UsuarioDto actualizarUsuario(String nombre);
+
+    boolean eliminarUsuario(Long id);
+
 }

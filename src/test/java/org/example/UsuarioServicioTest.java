@@ -63,4 +63,15 @@ class UsuarioServicioTest {
         Assertions.assertEquals(esperado.nombre, resultado.nombre);
         //Assertions.assertNotEquals(esperado.nombre, resultado.nombre,"Los nombres son iguales");
     }
+
+    @Test
+    void eliminarUsuario(){
+        //UsuarioDto objetoEliminado = new UsuarioDto(0, "");
+        boolean esperado = true;
+        Mockito.when(usuarioRepositorio.eliminarUsuario(Mockito.anyLong()))
+                .thenReturn(true);
+        final boolean resultado = usuarioServicio.eliminarUsuario(1L);
+        Assertions.assertEquals(esperado, resultado, "No se confirmo la eliminación del usuario");
+    }
+
 }
