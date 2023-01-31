@@ -15,6 +15,7 @@ class UsuarioServicioTest {
 
     @Mock
     private UsuarioRepositorio usuarioRepositorio;
+    @InjectMocks
     private UsuarioServicio usuarioServicio;
 
     @BeforeEach
@@ -72,6 +73,7 @@ class UsuarioServicioTest {
                 .thenReturn(true);
         final boolean resultado = usuarioServicio.eliminarUsuario(1L);
         Assertions.assertEquals(esperado, resultado, "No se confirmo la eliminación del usuario");
+        //borrado fisico y logico
     }
 
     @Test
