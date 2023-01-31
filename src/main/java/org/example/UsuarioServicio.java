@@ -31,4 +31,9 @@ public class UsuarioServicio {
         return usuarioRepositorio.eliminarUsuario(id);
     }
 
+    public  UsuarioDto inhabilitarUsuario(final long id){
+        return  usuarioRepositorio.inhabilitarUsuario(id);
+    }
+
+
 }

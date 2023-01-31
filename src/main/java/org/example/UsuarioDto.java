@@ -6,10 +6,15 @@ public class UsuarioDto {
 
     final Long id;
     final String nombre;
+    final int telefono;
 
-    public UsuarioDto(long id, String nombre) {
+    final int estado;
+
+    public UsuarioDto(Long id, String nombre, int telefono, int estado) {
         this.id = id;
         this.nombre = nombre;
+        this.telefono = telefono;
+        this.estado = estado;
     }
 
     public Long getId() {
@@ -19,6 +24,10 @@ public class UsuarioDto {
     public String getNombre() {
         return nombre;
     }
+
+    public int getTelefono() { return telefono; }
+
+    public int getEstado() { return estado; }
 
     @Override
     public boolean equals(Object obj) {

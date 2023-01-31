@@ -9,4 +9,6 @@ public interface UsuarioRepositorio {
 
     boolean eliminarUsuario(Long id);
 
+    UsuarioDto inhabilitarUsuario(Long id);
+
 }

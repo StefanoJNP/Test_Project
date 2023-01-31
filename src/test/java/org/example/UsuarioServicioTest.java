@@ -27,8 +27,8 @@ class UsuarioServicioTest {
 
     @Test
     public void dadoUsuarioParaCrearEsperamosUsuarioCreado() {
-        UsuarioDto objetoSimulado = new UsuarioDto(1L, "Prueba");
-        UsuarioDto esperado = new UsuarioDto(1L, "Prueba");
+        UsuarioDto objetoSimulado = new UsuarioDto(1L, "Prueba", 966666666, 1);
+        UsuarioDto esperado = new UsuarioDto(1L, "Prueba", 966666666, 1);
         Mockito.when(usuarioRepositorio.crearUsuario(Mockito.anyString()))
                 .thenReturn(objetoSimulado);
         final UsuarioDto resultado = usuarioServicio.crearUsuario("Prueba");
@@ -44,8 +44,8 @@ class UsuarioServicioTest {
 
     @Test
     void testObtenerUsuarioconMockito() {
-        UsuarioDto objetoSimulado = new UsuarioDto(1L, "Juan");
-        UsuarioDto esperado = new UsuarioDto(1L, "Juan");
+        UsuarioDto objetoSimulado = new UsuarioDto(1L, "Juan", 966666666, 1);
+        UsuarioDto esperado = new UsuarioDto(1L, "Juan", 966666666, 1);
         Mockito.when(usuarioRepositorio.obtenerUsuario(1L))
                 .thenReturn(objetoSimulado);
         final UsuarioDto resultado = usuarioServicio.obtenerUsuario(1L);
@@ -55,8 +55,8 @@ class UsuarioServicioTest {
 
     @Test
     void actualizarUsuario() {
-        UsuarioDto usuarioActualizado = new UsuarioDto(1L, "Miguel");
-        UsuarioDto esperado = new UsuarioDto(1L, "Miguel");
+        UsuarioDto usuarioActualizado = new UsuarioDto(1L, "Miguel", 966666666, 1);
+        UsuarioDto esperado = new UsuarioDto(1L, "Miguel", 966666666, 1);
         Mockito.when(usuarioRepositorio.actualizarUsuario(Mockito.anyString()))
                 .thenReturn(usuarioActualizado);
         final UsuarioDto resultado = usuarioServicio.actualizarUsuario("Miguel");
@@ -74,4 +74,13 @@ class UsuarioServicioTest {
         Assertions.assertEquals(esperado, resultado, "No se confirmo la eliminación del usuario");
     }
 
+    @Test
+    void inhabilitarUsuario() {
+        UsuarioDto usuarioInhabilitado = new UsuarioDto(2L, "Carlos", 966666666, 0);
+        UsuarioDto esperado = new UsuarioDto(2L, "Carlos", 966666666, 0);
+        Mockito.when(usuarioRepositorio.inhabilitarUsuario(Mockito.anyLong()))
+                .thenReturn(usuarioInhabilitado);
+        final UsuarioDto resultado = usuarioServicio.inhabilitarUsuario(2L);
+        Assertions.assertEquals(esperado.estado, resultado.estado, "No se pudo inhabilitar al usuario");
+    }
 }

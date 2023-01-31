@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.UsuarioServicioTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-30T14:45:56" hostname="YE" time="0.505">
+<testsuite name="org.example.UsuarioServicioTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-01-31T04:06:17" hostname="YE" time="0.455">
   <properties/>
-  <testcase name="actualizarUsuario()" classname="org.example.UsuarioServicioTest" time="0.505"/>
+  <testcase name="Dado un usuario queremos obtenerlo con el mÃ©todo obtenerUsuario()Esperamos que el usuario no este creado." classname="org.example.UsuarioServicioTest" time="0.444"/>
+  <testcase name="actualizarUsuario()" classname="org.example.UsuarioServicioTest" time="0.003"/>
+  <testcase name="eliminarUsuario()" classname="org.example.UsuarioServicioTest" time="0.002"/>
+  <testcase name="Dado un usuario que queremos crear esperamos que cuando llamamos a crearUsuario()Esperamos que el usuario este creado" classname="org.example.UsuarioServicioTest" time="0.001"/>
+  <testcase name="inhabilitarUsuario()" classname="org.example.UsuarioServicioTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
